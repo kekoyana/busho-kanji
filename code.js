@@ -6,10 +6,10 @@ function searchByText(text) {
     includeScore: true
   }
   const fuse = new Fuse(List, options);
-  return fuse.search(text)[0];
+  return fuse.search(text);
 }
 
 name.addEventListener('change', (event) => {
-  search_result = searchByText(event.target.value);
+  search_result = searchByText(event.target.value)[0];
   if (search_result) result.value = search_result.item;
 });
