@@ -6,6 +6,7 @@ function searchByText(text) {
   const options = {
     includeScore: true,
     keys: ['kanji', 'kana', 'romaji'],
+    threshold: 0.3,
   }
   const fuse = new Fuse(List, options);
   return fuse.search(text);
