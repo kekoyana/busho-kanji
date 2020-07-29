@@ -21,10 +21,12 @@ function copyClip(text) {
 }
 
 name.addEventListener('keyup', (event) => {
-  rText.innerHTML = "";
-  if (event.target.value.length < 3) return;
+  var text = event.target.value;
 
-  var search_result = searchByText(event.target.value);
+  rText.innerHTML = "";
+  if (text.match(/^[a-zA-Z]{0,2}$/)) return;
+
+  var search_result = searchByText(text);
 
   if (search_result.length == 0) return;
 
